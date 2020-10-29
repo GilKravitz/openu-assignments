@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Modify CSS and HTML",
+    "version": "0.1.0",
+    "description": "Lateral blog post demo extension",
+    "web_accessible_resources": [
+        "openu.svg",
+        "bg.jpg"
+    ],
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "css": [
+                "semantic/dist/semantic.min.css",
+                "style.css"
+            ],
+            "js": [
+                "jquery.min.js",
+                "semantic/dist/semantic.min.js",
+                "init.js"
+            ],
+            "matches": [
+                "https://sheilta.apps.openu.ac.il/pls/mtl/student.login",
+                "https://sheilta.apps.openu.ac.il/pls/mtl/student.first?v_kurs=&v_mis_matala="
+            ]
+        }
+    ]
+}
