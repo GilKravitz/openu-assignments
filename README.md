@@ -4,15 +4,7 @@
 ## Author
 
 👤 **Gil Kravitz**
-- Github: [@gilkraivtz](https://github.com/kefranabg)
-
-## Show your support
-
-Please ⭐️ this repository if this project helped you!
-
-<a href="https://www.patreon.com/FranckAbgrall">
-  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
+- Github: [@gilkraivtz](https://github.com/gilkravitz)
 
 ## 📝 License
 
