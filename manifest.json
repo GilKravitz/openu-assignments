@@ -4,24 +4,55 @@
     "version": "0.1.0",
     "description": "Lateral blog post demo extension",
     "web_accessible_resources": [
-        "openu.svg",
-        "bg.jpg"
+        "assets/images/openu.svg",
+        "assets/images/bg.jpg"
+    ],
+    "background": {
+        "scripts": [
+            "backgroundTasks/background.js"
+        ],
+        "persistent": true
+    },
+    "permissions": [
+        "webRequest",
+        "https://sso.apps.openu.ac.il/login?T_PLACE=https://sheilta.apps.openu.ac.il/pls/dmyopt2/sheilta.main"
     ],
     "content_scripts": [
         {
             "all_frames": true,
             "css": [
-                "semantic/dist/semantic.min.css",
-                "style.css"
+                "assets/semantic/dist/semantic.min.css"
             ],
             "js": [
-                "jquery.min.js",
-                "semantic/dist/semantic.min.js",
-                "init.js"
+                "assets/jquery.min.js",
+                "assets/semantic/dist/semantic.min.js"
             ],
             "matches": [
-                "https://sheilta.apps.openu.ac.il/pls/mtl/student.login",
+                "https://sheilta.apps.openu.ac.il/pls/mtl/*"
+            ]
+        },
+        {
+            "all_frames": true,
+            "css": [
+                "assignments/courseSelect.css"
+            ],
+            "js": [
+                "assignments/courseSelect.js"
+            ],
+            "matches": [
                 "https://sheilta.apps.openu.ac.il/pls/mtl/student.first?v_kurs=&v_mis_matala="
+            ]
+        },
+        {
+            "all_frames": true,
+            "css": [
+                "assignments/submitAssignment.css"
+            ],
+            "js": [
+                "assignments/submitAssignment.js"
+            ],
+            "matches": [
+                "https://sheilta.apps.openu.ac.il/pls/mtl/student.hagasha"
             ]
         }
     ]

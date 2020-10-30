@@ -1,0 +1,726 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+
+<HEAD>
+    <TITLE>מערכת שליחת מטלות</TITLE>
+    <style type="text/css">
+        <!--
+        @media print {
+            body {
+                background-color: #FFFFFF;
+            }
+
+            img {
+                display: none;
+            }
+
+            .td3 {
+                border-left: solid 1px navy;
+            }
+
+            .tablecolor {
+                border: solid 1px navy;
+                background-color: #FFFFFF;
+            }
+
+            .tdmanche {
+                width: 600;
+                background-color: #FFFFFF;
+            }
+
+            .noprint {
+                display: none;
+            }
+
+            .semester {
+                width: 740px;
+            }
+
+            .tablecolor1 {
+                width: 740px;
+                background-color: #FFFFFF;
+            }
+        }
+
+        @media screen {
+            body {
+                background-color: white;
+            }
+
+            .semester {
+                width: 923px
+            }
+
+            .tdmanche {
+                background-color: #d7f0f8;
+            }
+        }
+
+
+
+        body {
+
+            margin-top: 0px;
+            font-family: arial;
+            font-size: 10pt;
+            color: navy;
+        }
+
+
+        .tdmanche {
+            bakbgound-color: #C4E2F2;
+
+        }
+
+
+        .tablecolor {
+            background-color: #4db8db;
+        }
+
+        .tablecolor1 {
+            width: 90%;
+            border-left: solid 1px #4DB8DB;
+            border-top: solid 1px #4DB8DB;
+        }
+
+        .td_tablecolor {
+            border-right: solid 1px #4DB8DB;
+            border-bottom: solid 1px #4DB8DB;
+        }
+
+        .td_tablecolor2 {
+            border-right: solid 1px #F4BB8B;
+            border-bottom: solid 1px #4DB8DB;
+        }
+
+        .standartfont {
+            font-family: arial;
+            font-size: 14px;
+            font-weight: normal;
+            color: black;
+        }
+
+        .tableborder1 {
+            BORDER-RIGHT: none;
+            BORDER-TOP: none;
+            BORDER-LEFT: none;
+            BORDER-BOTTOM: none;
+            font-size: 10pt;
+            font-family: arial;
+            color: navy;
+        }
+
+        td {
+            font-family: arial;
+            font-size: 10pt;
+            color: navy;
+        }
+
+        .td_student {
+            width: 150px;
+        }
+
+        .td_id {
+            width: 100px;
+        }
+
+        .TD {
+
+            BORDER-RIGHT: none;
+            BORDER-TOP: none;
+            BORDER-LEFT: none;
+            BORDER-BOTTOM: none;
+            font-size: 10pt;
+            font-family: arial;
+            color: navy;
+
+        }
+
+        .tableborder {
+            BORDER-RIGHT: #4db8db 1px solid;
+            BORDER-TOP: #4db8db 1px solid;
+            BORDER-LEFT: #4db8db 1px solid;
+            BORDER-BOTTOM: #4db8db 1px solid;
+            font-size: 10pt;
+            font-family: arial;
+            color: navy;
+        }
+
+        .TD2 {
+
+            BORDER-RIGHT: #4db8db 1px solid;
+            BORDER-TOP: #4db8db 1px solid;
+            BORDER-LEFT: none;
+            BORDER-BOTTOM: none;
+            font-size: 10pt;
+            font-family: arial;
+            color: navy;
+
+        }
+
+        .style1 {
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 10pt;
+            font-family: arial;
+        }
+
+        .style2 {
+            color: NAVY;
+            font-weight: bold;
+            font-size: 10pt;
+            font-family: arial;
+        }
+
+        a:link {
+            font-size: 10.0pt;
+            font-family: Arial;
+            mso-ascii-font-family: Arial;
+            mso-hansi-font-family: Arial;
+            mso-bidi-font-family: Arial;
+            color: blue;
+            text-decoration: underline;
+            text-line-through: none;
+        }
+
+        a:visited {
+            color: navy;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: blue;
+            text-decoration: underline
+        }
+
+
+
+        select {
+            background-color: #53A7D2;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        .selectsem {
+            background-color: white;
+            color: navy;
+            font-weight: Bold;
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        .text {
+            background-color: #53A7D2;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 8pt;
+            width: 30px
+        }
+
+        .buttons {
+            font: 12px Arial, Verdana, Geneva, Helvetica, sans-serif;
+            background-color: #3786AF;
+            color: #ffffff;
+            margin-left: 20px;
+            margin-top: 3px;
+            margin-bottom: 0px;
+            width: 50px;
+            font-weight: bold;
+        }
+
+        .trheader {
+            background-color: #3786AF;
+
+        }
+
+        .trsum {
+            background-color: #FBE9D5;
+
+        }
+
+        .tablecolor {
+            background-color: #4db8db;
+        }
+
+        .messages_box {
+            float: left;
+            clear: left;
+            background-image: url(/ows-img/matalot/rekaodahot.gif);
+            background-repeat: no-repeat;
+            width: 223px;
+            height: 232px;
+            direction: rtl;
+            text-align: center;
+            padding-top: 25px;
+        }
+
+        .Tmiha {
+            padding: 5px;
+            text-align: right;
+            width: 210px;
+            font-weight: bold;
+            float: left;
+            clear: left;
+            background-image: url(/ows-img/matalot/reka_support.gif);
+            background-repeat: no-repeat;
+        }
+
+        .help {
+            font-weight: bold;
+            text-align: right;
+            width: 383px;
+            height: 45px;
+            padding-right: 2px;
+            padding-top: 8px;
+            background-image: url(/ows-img/matalot/reka_bar.gif);
+            background-repeat: no-repeat;
+        }
+
+        .popup {
+            display: none;
+            background-color: White;
+            z-index: 200;
+            width: 200px;
+            border-color: Blue;
+            border-style: solid;
+            font-size: 8pt;
+            font-family: Arial;
+            border-style: solid;
+            border-width: 1px;
+            padding: 3px;
+            position: absolute;
+        }
+
+        .style1 {
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 10pt;
+            font-family: arial;
+        }
+
+        .trmiun {
+            background-color: #9FCEE6;
+        }
+
+        .trstats {
+            background-color: #9FCEE6;
+        }
+
+
+        .t {
+            background: url(/ows-img/matalot/dot.gif) 0 0 repeat-x;
+            width: 750px
+        }
+
+        .b {
+            background: url(/ows-img/matalot/dot.gif) 0 100% repeat-x
+        }
+
+        .l {
+            background: url(/ows-img/matalot/dot.gif) 0 0 repeat-y
+        }
+
+        .r {
+            background: url(/ows-img/matalot/dot.gif) 100% 0 repeat-y
+        }
+
+        .bl {
+            background: url(/ows-img/matalot/corner4.jpg) 0 100% no-repeat
+        }
+
+        .br {
+            background: url(/ows-img/matalot/corner3.jpg) 100% 100% no-repeat
+        }
+
+        .tl {
+            background: url(/ows-img/matalot/corner1.jpg) 0 0 no-repeat
+        }
+
+        .tr {
+            background: url(/ows-img/matalot/corner2.jpg) 100% 0 no-repeat;
+            padding: 10px
+        }
+
+        #siteLoader {
+            position: absolute;
+            z-index: 100;
+            background-color: #000;
+            filter: alpha(opacity=90);
+            -moz-opacity: 0.8;
+            opacity: 0.8;
+            top: 30%;
+            left: 0;
+            height: 43%;
+            width: 100%;
+            text-align: center;
+            line-height: 0;
+        }
+
+        #loadImg {
+            position: absolute;
+            text-align: center;
+            background-color: #fff;
+            width: 100%;
+            z-index: 100;
+            top: 10%;
+            left: 0;
+            line-height: 0;
+        }
+
+        #loadText {
+            position: relative;
+            font-family: Verdana, Arial;
+            font-size: 20px;
+            top: 87%;
+            height: 25px;
+            color: #fff;
+            text-align: center;
+            vertical-align: bottom;
+        }
+
+
+    </style>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1255">
+    <META HTTP-EQUIV="Expires" CONTENT="MON, 06 Jan 1990 00:00:01 GMT">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <script type="text/javascript">
+        function checkForm(myForm) {
+            var Numf = myForm.numf.value + "0";
+            if (myForm.numf.value == "") {
+                alert("!עליך לציין את מספר הקבצים שברצונך לשלוח");
+                return false;
+            }
+            else if (isNaN(parseInt(myForm.numf.value.substring(0, 1))) || isNaN(parseInt(Numf.substring(1, 2)))) {
+                alert("!אנא הזן/י רק מספרים שלמים");
+                return false;
+            }
+            else if (myForm.numf.value > 10) {
+                alert("אנא הכנס עד 10 קבצים בלבד");
+                return false;
+            }
+            else if (parseInt(myForm.numf.value) <= 0 || myForm.numf.value == "00") {
+                alert("!עליך לשלוח לפחות קובץ אחד");
+                return false;
+            }
+            else if (myForm.v_matala.value == "") {
+                alert("עליך לציין את מספר המטלה שברצונך לשלוח");
+                return false;
+            }
+
+            else if (myForm.in_cb.checked == false) {
+                alert("עלייך לאשר שהעבודה מקורית  ");
+
+                return false;
+            }
+
+            else return true;
+        }
+
+    </SCRIPT>
+    <script type="text/javascript">
+        function doHelp() {
+            helpWindow = window.open("/ows-img/matalot/studenthelp.pdf", "Help", "resizable=yes,width=700,height=400,toolbar=yes,scrollbars=yes,status=yes");
+        }
+        function roll(img_name1, img_src1) {
+            document[img_name1].src = img_src1;
+        }
+    </SCRIPT>
+</head>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3013725-2");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+</script>
+
+<body bgcolor="White" dir=rtl>
+    <table width=100% border=0>
+        <tr align=left VALIGN=TOP>
+            <td align=left width=19>
+                <IMG SRC="/ows-img/matalot/spacer.gif" WIDTH=19 HEIGHT=1 BORDER=0 alt=""><BR>
+                <TABLE CELLSPACING=0 BORDER=1>
+                    <TR>
+                        <TD BGCOLOR=WHITE></TD>
+                    </TR>
+                </TABLE>
+            </td>
+            <td align=center>
+                <table cellpadding=0 width=785 cellspacing=0 border=0>
+                    <TR>
+                        <TD align=center colspan=2>
+                            <IMG SRC="/ows-img/matalot/headerstudent.gif" BORDER=0 alt="">
+                        </TD>
+                    </TR>
+                    <tr>
+                        <td align=right>
+                            <table bgcolor=#E6EEFF width=785 cellpadding=0 cellspacing=0 border=0>
+                                <tr>
+                                    <td colspan=2 align=right NOWRAP>
+                                        <FONT COLOR="#202E5B"><B>גיל קרביץ
+                                            </b>
+                                        </font>
+                                    </td>
+                                    <td colspan=4 align=right>
+                                        <FONT COLOR="#202E5B"><B>
+                                                מתמטיקה בדידה
+                                                (20476)</b>
+                                        </FONT>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan=2 align=right NOWRAP>
+                                        <FONT COLOR="#202E5B">
+                                            <B>
+                                                סמסטר:2020ג
+                                            </b>
+                                        </FONT>
+                                    </td>
+
+                                    <td colspan=1 align=right NOWRAP>
+                                        <FONT COLOR="#202E5B">
+                                            בודק/ת מטלות באינטרנט:&nbsp;&nbsp;
+                                        </FONT>
+                                        <FONT COLOR="#202E5B"><B>
+                                                טלי אביגד <BR>
+                                            </B>
+                                        </FONT>
+
+
+
+                                    </td>
+
+                                    <td align=right colspan=3 NOWRAP>
+                                        <FONT COLOR="#202E5B"><B>
+                                                מנחה: טלי אביגד
+                                            </b>
+                                        </font>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form action="student.tofes" METHOD="GET" onSubmit="return checkForm(this)">
+                                <BR>
+                                <div class="t">
+                                    <div class="b">
+                                        <div class="l">
+                                            <div class="r">
+                                                <div class="bl">
+                                                    <div class="br">
+                                                        <div class="tl">
+                                                            <div class="tr">
+                                                                <table width=100% border=0>
+                                                                    <tr>
+
+                                                                        <td align=right>
+                                                                            בחר את מספר המטלה שברצונך לשלוח:
+                                                                        </td>
+
+                                                                        <td align=right>
+                                                                            <FONT SIZE=-1>
+
+                                                                                <select name="v_matala">
+                                                                                    <OPTION VALUE="" SELECTED>בחר מטלה
+                                                                                </select>
+
+                                                                            </FONT>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr align=right>
+                                                                        <td>
+                                                                            <BR>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr align=right>
+                                                                        <td>
+                                                                            &nbsp;
+                                                                        </td>
+                                                                        <td bgcolor=white
+                                                                            style="border: 1px solid #E6EEFF; padding: 10px;">
+                                                                            <B>הריני מצהיר/ה כי המטלה/בחינה שאני מגיש/ה
+                                                                                בזאת הוכנה בכוחות עצמי
+                                                                                וכי במהלך הכנתה לא שיתפתי פעולה ו/או
+                                                                                עזרתי ו/או נעזרתי בכל צד
+                                                                                שלישי, לרבות, כל אדם וכל אמצעי טכנולוגי
+                                                                                כגון טלפון נייד ו/או שעון חכם,
+                                                                                אתר אינטרנט, קבוצת דיון, וכל דרך המהווה
+                                                                                מסירת מידע ו/או קבלת מידע
+                                                                                הקשור בבחינה (פרט למקורות המידע שאושר
+                                                                                במפורש להשתמש בהם).</B>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">
+                                                                            &nbsp;
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr align=right>
+                                                                        <td>
+                                                                            &nbsp;
+                                                                        </td>
+                                                                        <td bgcolor=white
+                                                                            style="border: 1px solid #E6EEFF; padding: 10px;">
+                                                                            <B>אני מתחייב/ת לשמור על יושרה אקדמית
+                                                                                ומודע/ת לכך כי אי עמידה באמור
+                                                                                לעיל או בכל חלק ממנו מהווה עבירת משמעת
+                                                                                חמורה אשר הענישה בגינה
+                                                                                עלולה לכלול הרחקה לתקופה משמעותית מן
+                                                                                הלימודים באוניברסיטה הפתוחה.</B>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr align=right>
+                                                                        <td>
+                                                                            &nbsp;
+                                                                        </td>
+                                                                        <td>
+                                                                            &nbsp;
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr align=right>
+                                                                        <td>
+                                                                            &nbsp;
+                                                                        </td>
+                                                                        <td>
+                                                                            <FONT>
+                                                                                <INPUT TYPE=checkbox NAME=in_cb>אני
+                                                                                יודע/ת שהאוניברסיטה הפתוחה משתמשת בתכנה
+                                                                                לבדיקת מקוריות המטלה, וכי העתקה או גניבה
+                                                                                טקסטואלית מהווים עבירת משמעת.
+                                                                                <BR>
+                                                                            </FONT><br><br>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr align=right>
+                                                                        <td>
+                                                                            &nbsp;
+                                                                        </td>
+                                                                        <td>
+                                                                            &nbsp;
+                                                                        </td>
+                                                                    </tr>
+
+
+                                                                    <tr align=right>
+                                                                        <td>
+                                                                            <FONT size=+0.5>
+                                                                                מספר קבצים למשלוח:
+                                                                            </FONT>
+                                                                        </td>
+                                                                        <td>
+                                                                            <FONT FACE="Arial (hebrew), David">
+                                                                                <INPUT TYPE=TEXT SIZE=3 MAXLENGTH=2
+                                                                                    NAME=numf
+                                                                                    style="border:solid 1px #53A7D2">
+                                                                            </FONT>
+                                                                        </td>
+
+                                                                    </tr>
+
+                                                                    <tr align=right>
+                                                                        <td>
+                                                                            <BR>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan=2 align=center>
+                                                                            <INPUT TYPE=SUBMIT VALUE="המשך"
+                                                                                class=buttons>
+                                                                            <BR><BR>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </FORM>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align=right>
+                            <font size="-1">
+                                המערכת לא תומכת ב"סימניות". אין לשמור כתובת הדף, היא אינה קבועה. הסבר ראה ב"עזרה".
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align=right>
+                            <TABLE WIDTH=300 BORDER=0 BGCOLOR=WHITE CELLSPACING=0 CELLPADDING=0 align=center>
+                                <TR ALIGN=center VALIGN=TOP>
+                                    <TD>
+                                        <A HREF=/pls/mtl/student.hagasha?v_pro=1768467000><IMG
+                                                SRC="/ows-img/matalot/agashatmatala_over.gif" BORDER=0 ALT="שליחת מטלה"
+                                                name="img20">
+                                        </A>
+                                    </TD>
+                                    <TD>
+                                        <A HREF=/pls/mtl/student.sikum?v_pro=2716407100
+                                            onmouseover="roll('img21', '/ows-img/matalot/prateimatala_over.gif')"
+                                            onmouseout="roll('img21', '/ows-img/matalot/prateimatala.gif')"><IMG
+                                                SRC="/ows-img/matalot/prateimatala.gif" BORDER=0 ALT="פרטי מטלה וציונים"
+                                                name="img21">
+                                        </A>
+                                    </TD>
+                                    <TD>
+                                        <A HREF="https://opal.openu.ac.il/ouil/course.php?course=c20476&semester=2021a"
+                                            target=_blank>
+                                            <IMG SRC="/ows-img/matalot/coursesite.gif" BORDER=0 ALT="אתר הקורס">
+                                        </A>
+                                    </TD>
+                                    <TD>
+                                        <A HREF="https://www.openu.ac.il/sheilta/" target=_blank>
+                                            <IMG SRC="/ows-img/matalot/sheilta.gif" BORDER=0 ALT="שאילתא">
+                                        </A><BR>
+                                    </TD>
+                                    <TD>
+                                        <A HREF="https://sheilta.apps.openu.ac.il/ows-img/matalot/Matalot_student_new.swf"
+                                            target=_blank>
+                                            <IMG SRC="/ows-img/matalot/adracha.gif" BORDER=0 ALT="סרטון הדרכה">
+                                        </A><BR>
+                                    </TD>
+                                    <TD>
+                                        <A HREF="javascript:doHelp()">
+                                            <IMG SRC="/ows-img/matalot/helpstud.gif" BORDER=0 ALT="עזרה">
+                                        </A><BR>
+                                    </TD>
+                                    <TD>
+                                        <A
+                                            HREF="javascript:top.document.location.href='https://sso.apps.openu.ac.il/logout?t_place=https://www.openu.ac.il'">
+                                            <IMG SRC="/ows-img/matalot/yetzia.gif" BORDER=0 ALT="יציאה" target="_top">
+                                        </A><BR>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+                </table>
+            </td>
+        </tr>
+    </table>

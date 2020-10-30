@@ -18,7 +18,7 @@ const createContainer = () => {
 }
 const createTitle = () => {
     var title = $("<h1 class='ui huge header centered'></h1>").text("מערכת מטלות");
-    var logo = $("<img class='ui image'/>").attr('src', "openu.svg");
+    var logo = $("<img class='ui image'/>").attr('src', getImageUrl("openu.svg"));
     var divider = $("<div class='ui section divider'></div>");
     $('.container').append(logo);
     $('.container').append(title);
@@ -45,7 +45,7 @@ const moveFormFields = () => {
 //and initialize input as semantic ui submit button
 const removeBgImg = () => {
     $('body').removeAttr('background');
-    $('body').css('background-image', "url('bg.jpg')");
+    $('body').css('background-image', 'url(' + getImageUrl("bg.jpg") + ')');
     // change submit btn
     $('input[type=image]')
         .removeAttr('src')
@@ -66,4 +66,11 @@ const changeFormToSemanticTheme = () => {
     $('select').dropdown();
 }
 
-
+const getImageUrl = (imgName) => {
+    var url;
+    if ($(location).attr('href').includes('127'))
+        url = "/assets/images/" + imgName;
+    else
+        url = chrome.extension.getURL("/assets/images/" + imgName);
+    return url;
+}
